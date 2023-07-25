@@ -1,0 +1,262 @@
+:root {
+  /* colors variables */
+  --Light-red: hsl(0, 100%, 67%);
+  --Orangey-yellow: hsl(39, 100%, 56%);
+  --Green-teal: hsl(166, 100%, 37%);
+  --Cobalt-blue: hsl(234, 85%, 45%);
+
+  --light-Light-red: hsla(0, 100%, 67%, 0.135);
+  --light-Orangey-yellow: hsla(39, 100%, 56%, 0.084);
+  --light-Green-teal: hsla(166, 100%, 37%, 0.089);
+  --light-Cobalt-blue: hsla(234, 85%, 45%, 0.089);
+
+  --light-gray: rgba(255, 255, 255, 0.655);
+  --White:  hsl(0, 0%, 100%);
+  --Pale-blue: hsl(221, 100%, 96%);
+  --Dark-gray-blue: hsl(224, 30%, 27%);
+  --Light-lavender: hsl(241, 100%, 89%);
+
+  /* linear gradients */
+  --Light-slate-blue: hsl(252, 67%, 52%);
+  --Light-royal-blue: hsl(241, 81%, 40%);
+
+  --Violet-blue: hsla(256, 72%, 46%, .3);
+  --Persian-blue: rgb(31, 29, 169);
+
+  /* fonts */
+  --font-size: 18px;
+  --font-family: font-family: 'Hanken Grotesk', sans-serif;
+}
+
+/*
+
+1. Use a more-intuitive box-sizing model.
+
+*/
+
+*, *::before, *::after {
+
+box-sizing: border-box;
+
+}
+
+/*
+
+2. Remove default margin
+
+*/
+
+* {
+
+margin: 0;
+
+}
+
+/*
+
+Typographic tweaks!
+
+3. Add accessible line-height
+
+4. Improve text rendering
+
+*/
+
+body {
+
+line-height: 1.5;
+
+-webkit-font-smoothing: antialiased;
+
+}
+
+/*
+
+5. Improve media defaults
+
+*/
+
+img, picture, video, canvas, svg {
+
+display: block;
+
+max-width: 100%;
+
+}
+
+/*
+
+6. Remove built-in form typography styles
+
+*/
+
+input, button, textarea, select {
+
+font: inherit;
+
+}
+
+/*
+
+7. Avoid text overflows
+
+*/
+
+p, h1, h2, h3, h4, h5, h6 {
+
+overflow-wrap: break-word;
+
+}
+
+/*
+
+8. Create a root stacking context
+
+*/
+
+#root, #__next {
+
+isolation: isolate;
+
+}
+
+
+body {
+  font-family: var(--font-family);
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  max-width: 40rem;
+  overflow: hidden;
+}
+@media (max-width: 500px) {
+  body{
+    place-content: unset;
+  }
+  .container {
+    display: block;
+  }
+}
+
+.container__left {
+  text-align: center;
+  background: linear-gradient(to bottom, var(--Light-slate-blue), var(--Light-royal-blue));
+  color: var(--light-gray);
+  padding: 2rem;
+  border-radius: 20px;
+}
+.title h1{
+  font-size: var(--font-size);
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.score p {
+  background: linear-gradient(to bottom, var(--Persian-blue), var(--Violet-blue));
+  font-size: var(--font-size);
+  border-radius: 50%;
+  margin-inline: auto;
+  aspect-ratio: 1/1;
+  margin-bottom: 2rem;
+  width: 12rem;
+  display: grid;
+  place-content: center;
+  
+}
+.score span {
+  font-weight: 800;
+  font-size: 4rem;
+  display: block;
+  color: var(--White);
+}
+
+.text h3{
+  color: var(--White);
+  font-weight: 700;
+  margin-bottom: .725rem;
+}
+.text p {
+  font-size: var(--font-size);
+}
+
+.container__right {
+  padding: 2rem;
+  display: grid;
+
+}
+.title h2 {
+  font-size: var(--font-size);
+  text-transform: capitalize;
+  margin-bottom: 2rem;
+}
+.table_summary {
+  display: grid;
+  gap: 1rem;
+}
+
+.summary {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: .3rem;
+  padding: 1rem;
+
+}
+.summary:nth-child(1) {
+  background: var(--light-Light-red);
+}
+.summary:nth-child(2) {
+  background: var(--light-Orangey-yellow);
+}
+.summary:nth-child(3) {
+  background: var(--light-Green-teal);
+}
+.summary:nth-child(4) {
+  background: var(--light-Cobalt-blue);
+}
+
+
+.left_summary {
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+}
+
+.right_summary p span {
+
+  font-weight: 700;
+}
+.red {
+  color: var(--Light-red);
+  text-transform: capitalize;
+}
+.yellow {
+  color: var(--Orangey-yellow);
+}
+
+.green {
+  color: var(--Green-teal);
+}
+
+.blue {
+  color: var(--Cobalt-blue);
+}
+
+button {
+  color: var(--White);
+  background: var(--Dark-gray-blue);
+  padding: .4rem 1rem;
+  border-radius: 20rem;
+  margin-top: 2rem;
+}
+button:hover {
+  background: var(--Light-royal-blue);
+}
+
+
